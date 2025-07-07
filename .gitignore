@@ -1,3 +1,7 @@
+# Allure
+
+tests/allure-results
+
 /.idea
 /venv
 .idea
