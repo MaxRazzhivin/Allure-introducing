@@ -56,6 +56,7 @@ def open_pull_requests_tab():
 @allure.step("Проверяем наличие Pull Request с текстом {text}")
 def should_see_issue_with_text(text):
     s('#issue_91').should(have.text(text))
+    #s(by.partial_text('#issue_91')).should(be.visible) - альтернатива через часть текста
 
 
 @allure.tag("web")

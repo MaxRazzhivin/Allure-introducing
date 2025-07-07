@@ -15,3 +15,4 @@ def test_github():
     s("#pull-requests-repo-tab-count").click()
 
     s('#issue_91').should(have.text('Fix pull request close test'))
+    # s(by.partial_text('#issue_91')).should(be.visible) - альтернатива через часть текста

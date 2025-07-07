@@ -1,3 +1,0 @@
-pytest~=8.3.3
-allure-pytest
-selene>=2.0.0rc7
