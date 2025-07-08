@@ -12,7 +12,7 @@ def test_dynamic_steps():
 
     with allure.step("Ищем репозиторий"):
         s('.search-input').click()
-        s('[data-target="query-builder.input"]').send_keys("eroshenkoam/allure-example").press_enter()
+        s('#query-builder-test').send_keys("eroshenkoam/allure-example").press_enter()
 
     with allure.step("Переходим по ссылке репозитория"):
         s(by.link_text("eroshenkoam/allure-example")).click()
@@ -22,6 +22,7 @@ def test_dynamic_steps():
 
     with allure.step("Проверяем наличие Pull request № 91 с текстом Fix pull request close test"):
         s('#issue_91').should(have.text('Fix pull request close test'))
+        # s(by.partial_text('#issue_91')).should(be.visible) - альтернатива через часть текста
 
 
 def test_decorator_steps():
@@ -40,7 +41,7 @@ def open_main_page():
 @allure.step("Ищем репозиторий {repo}")
 def search_for_repository(repo):
     s('.search-input').click()
-    s('[data-target="query-builder.input"]').send_keys(repo).press_enter()
+    s('#query-builder-test').send_keys(repo).press_enter()
 
 
 @allure.step("Переходим по ссылке репозитория {repo}")
